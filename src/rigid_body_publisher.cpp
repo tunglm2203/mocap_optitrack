@@ -58,8 +58,8 @@ geometry_msgs::PoseStamped getRosPose(RigidBody const& body, const Version& coor
   {
     // y & z axes are swapped in the Optitrack coordinate system
     // Also compatible with versions > Motive 2.0
-    poseStampedMsg.pose.position.x = body.pose.position.x;
-    poseStampedMsg.pose.position.y = -body.pose.position.z;
+    poseStampedMsg.pose.position.x = body.pose.position.z;
+    poseStampedMsg.pose.position.y = body.pose.position.x;
     poseStampedMsg.pose.position.z = body.pose.position.y;
 
     poseStampedMsg.pose.orientation.x = body.pose.orientation.x;
@@ -88,8 +88,8 @@ nav_msgs::Odometry getRosOdom(RigidBody const& body, const Version& coordinatesV
   {
     // y & z axes are swapped in the Optitrack coordinate system
     // Also compatible with versions > Motive 2.0
-    OdometryMsg.pose.pose.position.x = body.pose.position.x;
-    OdometryMsg.pose.pose.position.y = -body.pose.position.z;
+    OdometryMsg.pose.pose.position.x = body.pose.position.z;
+    OdometryMsg.pose.pose.position.y = body.pose.position.x;
     OdometryMsg.pose.pose.position.z = body.pose.position.y;
 
     OdometryMsg.pose.pose.orientation.x = body.pose.orientation.x;

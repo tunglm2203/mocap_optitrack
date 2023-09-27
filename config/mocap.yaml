@@ -3,22 +3,59 @@
 # Identifier corresponds to Trackable ID set in Tracking Tools
 #
 rigid_bodies:
-    '1':
-        pose: Robot_1/pose
-        pose2d: Robot_1/ground_pose
-        odom: Robot_1/Odom
+    '0':
+        pose: base_robot/pose
+        pose2d: base_robot/ground_pose
+        odom: base_robot/Odom
         tf: tf
-        child_frame_id: Robot_1/base_link
+        child_frame_id: base_robot/base_link
+        parent_frame_id: world
+    '1':
+        pose: table_top/pose
+        pose2d: table_top/ground_pose
+        odom: table_top/Odom
+        tf: tf
+        child_frame_id: table_top/base_link
         parent_frame_id: world
     '2':
-        pose: Robot_2/pose
-        pose2d: Robot_2/ground_pose
-        odom: Robot_2/Odom
+        pose: leg_black/pose
+        pose2d: leg_black/ground_pose
+        odom: leg_black/Odom
         tf: tf
-        child_frame_id: Robot_2/base_link
+        child_frame_id: leg_black/base_link
         parent_frame_id: world
+    '3':
+        pose: leg_blue/pose
+        pose2d: leg_blue/ground_pose
+        odom: leg_blue/Odom
+        tf: tf
+        child_frame_id: leg_blue/base_link
+        parent_frame_id: world
+    '4':
+        pose: leg_pink/pose
+        pose2d: leg_pink/ground_pose
+        odom: leg_pink/Odom
+        tf: tf
+        child_frame_id: leg_pink/base_link
+        parent_frame_id: world
+    '5':
+        pose: leg_white/pose
+        pose2d: leg_white/ground_pose
+        odom: leg_white/Odom
+        tf: tf
+        child_frame_id: leg_white/base_link
+        parent_frame_id: world
+#    '6':
+#        pose: triangle/pose
+#        pose2d: triangle/ground_pose
+#        odom: triangle/Odom
+#        tf: tf
+#        child_frame_id: triangle/base_link
+#        parent_frame_id: world
 optitrack_config:
-        multicast_address: 224.0.0.1
+        multicast_address: 239.255.42.99
+#        multicast_address: 224.0.0.1
+
         command_port: 1510
-        data_port: 9000
+        data_port: 1511
         enable_optitrack: true
